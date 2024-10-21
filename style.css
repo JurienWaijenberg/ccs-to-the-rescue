@@ -151,7 +151,7 @@ body > section:nth-child(1) {
 
   
 
-html:has(section:nth-child(2) > button:nth-child(1):active) body > section {
+html:has(section:nth-child(2) > button:nth-child(1):active) body > section:nth-child(1) {
     & > section:nth-child(1) {
         transform: rotate(46deg);
         /* animation-name: red-ball; */
@@ -166,7 +166,7 @@ html:has(section:nth-child(2) > button:nth-child(1):active) body > section {
    
 }
 
-html:has(section:nth-child(2) > button:nth-child(2):active) body > section {
+html:has(section:nth-child(2) > button:nth-child(2):active) body > section:nth-child(1) {
     & > section:nth-child(1) {
         transform: rotate(0deg);
         /* animation-name: red-ball; */
@@ -184,6 +184,11 @@ html:has(section:nth-child(2) > button:nth-child(2):active) body > section {
 
 /* -- Road -- */
 
+@scroll-timeline my-scroll-timeline {
+  source: auto inline;
+  scroll-offsets: 0% 100%;
+}
+
 body > section:nth-child(4) {
     width: 100%;
     overflow: scroll;
@@ -191,12 +196,39 @@ body > section:nth-child(4) {
     top: 60%;
     height: 10em;
 
-    & section {
+    & > section {
         background-color: brown;
         width: 200vw;
         height: 10em;
+        display: flex;
+        overflow-x: scroll; /* Horizontal scroll */
+        scroll-behavior: smooth;
+
+        & > section {
+          left: 50%;
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          background-color: red;
+
+          animation-name: rotate;
+          animation-timeline: view(inline);
+          animation-iteration-count: 4;
+          animation-fill-mode: none;
+          animation-range: 0% 100%;
+        }
     }
     
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 
@@ -220,104 +252,6 @@ body > section:nth-child(4) {
 
 
 
-
-
-
-
-
-
-
-.title {
-    animation-timeline: view(block);
-    animation-name: shrink;
-    animation-range: entry -10% contain 40%;
-  }
-  
-  @keyframes shrink {
-    from {
-      width: 100%;
-      scale: 0.8;
-      opacity: 0;
-    }
-    to {
-      width: calc(50% - 2px);
-      scale: 1;
-      opacity: 1;
-    }
-  }
-  
-  li {  
-    animation-timeline: view(block);
-    animation-name: grow;
-    animation-range: entry -10% contain 40%;
-  }
-  
-  @keyframes grow {
-    from {
-      scale: 0.8;
-      opacity: 0;
-    }
-    to {
-      scale: 1;
-      opacity: 1;
-    }
-  }
-  
-  .label {
-    animation-timeline: view(block);
-    animation-name: fadeout;
-    animation-range: contain 0% contain 100%;
-  }
-  
-  @keyframes fadeout {
-    from {
-      scale: 1;
-      opacity: 1;
-    }
-    to {
-      translate: 0 -250%;
-      scale: 0.8;
-      opacity: 0;
-    }
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -333,7 +267,7 @@ body > section:nth-child(4) {
   
   
   /* Base Styles */
-  * {
+  /* * {
     box-sizing: border-box;
   }
   
@@ -468,4 +402,4 @@ body > section:nth-child(4) {
     margin-block: 0.25rem;
     padding: 0.75em 1em;
     transform-origin: left;
-  }
+  } */

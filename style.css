@@ -43,10 +43,6 @@ body > section:nth-child(1) {
         transform-origin: 288px 50%;
         transition: 9999999s ease-in-out;
 
-        /* -webkit-animation: red-ball 1.5s ease-in-out;
-        animation: red-ball 1.5s ease-in-out;
-        animation-play-state: paused; */
-
             /* Grijp onderarm */
         & > section:nth-child(1) {
             border: var(--Border);
@@ -137,24 +133,11 @@ body > section:nth-child(1) {
     }
 }
 
-
-/* @keyframes red-ball {
-    from {
-        -webkit-transform: rotate(23deg);
-        transform:rotate(23deg); 
-    }
-    to {
-        -webkit-transform: rotate(46deg);
-        transform:rotate(46deg); 
-    }
-  } */
-
   
 
 html:has(section:nth-child(2) > button:nth-child(1):active) body > section:nth-child(1) {
     & > section:nth-child(1) {
         transform: rotate(46deg);
-        /* animation-name: red-ball; */
         transition: 1.5s ease-in-out;
 
         & > section:nth-child(1) {
@@ -169,7 +152,6 @@ html:has(section:nth-child(2) > button:nth-child(1):active) body > section:nth-c
 html:has(section:nth-child(2) > button:nth-child(2):active) body > section:nth-child(1) {
     & > section:nth-child(1) {
         transform: rotate(0deg);
-        /* animation-name: red-ball; */
         transition: 1.5s ease-in-out;
 
         & > section:nth-child(1) {
@@ -180,6 +162,35 @@ html:has(section:nth-child(2) > button:nth-child(2):active) body > section:nth-c
 
    
 }
+
+html:has(section:nth-child(2) > button:nth-child(3):active) body > section:nth-child(1) {
+  & > section:nth-child(1) {
+      transform: rotate(0deg);
+      transition: 1.5s ease-in-out;
+
+      & > section:nth-child(1) {
+          transform: rotate(321deg);
+          transition: 1.5s ease-in-out;
+      }
+  }
+
+ 
+}
+
+html:has(section:nth-child(2) > button:nth-child(4):active) body > section:nth-child(1) {
+  & > section:nth-child(1) {
+      transform: rotate(0deg);
+      transition: 1.5s ease-in-out;
+
+      & > section:nth-child(1) {
+          transform: rotate(321deg);
+          transition: 1.5s ease-in-out;
+      }
+  }
+
+ 
+}
+
 
 
 /* -- Road -- */
@@ -264,142 +275,3 @@ body > section:nth-child(4) {
   
   
   
-  
-  
-  /* Base Styles */
-  /* * {
-    box-sizing: border-box;
-  }
-  
-  html {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #777;
-    height: 100%;
-  }
-  
-  body {
-    display: grid;
-    place-items: center;
-    margin: 0;
-    height: 100%;
-  }
-  
-  div {
-    border: solid 1px #ccc;
-    height: var(--height);
-    width: 90vw;
-    overflow-y: auto;
-    overflow-x: hidden;
-    
-    --height: 500px;
-  }
-  
-  article {
-    padding: 1.25em;
-    position: relative;
-    min-height: var(--height);
-  }
-  
-  .label {
-    align-items: center;
-    bottom: 1em;
-    color: #ff495d;
-    display: flex;
-    gap: 0.25em;
-    justify-content: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
-  
-  .label span {
-    font-size: 125%;
-  }
-  
-  section {
-    position: relative;
-  }
-  
-  section:last-of-type section:last-of-type {
-    min-height: var(--height);
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  p {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-  
-  h2, h3 {
-    color: white;
-    display: flex;
-    font-size: 1.5em;
-    margin: 0;
-    position: sticky;
-    top: 0;
-  }
-  
-  h2::before, h3::before {
-    background: #ccc;
-    content: '';
-    height: 1px;
-    position: absolute;
-    width: 100%;
-  }
-  
-  h2 {
-    justify-content: flex-end;
-    margin-bottom: 0.25rem;
-    z-index: 2;
-  }
-  
-  h2::before {
-    right: 0;
-    top: 0;
-  }
-  
-  h3 {
-    z-index: 1;
-  }
-  
-  h3::before {
-    left: 0;
-    bottom: 0;
-  }
-  
-  .title {
-    align-items: center;
-    display: flex;
-    font-size: 85%;
-    height: 50px;
-    padding-inline: 0.5em;
-    min-width: calc(50% - 2px);
-  }
-  
-  h2 .title {
-    background-color: #6244b0;
-    transform-origin: right;
-  }
-  
-  h3 .title {
-    background-color: #3dc0d1;
-    transform-origin: left;
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    font-size: 18px;
-    padding: 0 0.25rem;
-  }
-  
-  li {
-    background-color: rgba(0, 0, 0, 0.05);
-    line-height: 1.5;
-    margin-block: 0.25rem;
-    padding: 0.75em 1em;
-    transform-origin: left;
-  } */

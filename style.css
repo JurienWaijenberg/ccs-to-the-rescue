@@ -325,6 +325,16 @@ body > section:nth-child(4) {
         left: 0;
         flex: 0 0 auto;
         animation-timeline: scroll(nearest inline);
+
+        & section {
+            width: 10em;
+            height: 5em;
+            animation: bg linear both;
+            position: sticky;
+            top: 0;
+            left: 0;
+            animation-timeline: scroll(nearest inline);
+        }
     }
 
 	& > section:nth-child(2) {

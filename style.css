@@ -8,18 +8,34 @@
 	--Border-radius: 10px;
 }
 
+@font-face {
+	font-family: 'Rocher';
+	src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+  }
+
 body {
+	margin: 0;
 	background-color: var(--bgYellow);
+	height: 100vh;
+}
+
+main {
 	display: flex;
 	flex-direction: row;
 	width: auto;
-	height: 100vh;
 	margin: 0;
 	align-items: center;
 	justify-content: center;
 }
 
-body > section:nth-child(3) > section:nth-child(1) {
+h1 {
+	font-family: Rocher;
+    text-transform: uppercase;
+    font-size: 9em;
+    text-align: center;
+}
+
+body main > section:nth-child(3) > section:nth-child(1) {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -184,7 +200,7 @@ body > section:nth-child(3) > section:nth-child(1) {
     }
   }
 
-body > section:nth-child(1) {
+body main > section:nth-child(1) {
 	display: grid;
 	grid-template-columns: auto auto auto;
 	position: absolute;
@@ -231,7 +247,7 @@ body > section:nth-child(1) {
 }
 
 /* Links boven */
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(1):hover) body > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(1):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(46deg);
 	transition: 1.5s ease-in-out;
 
@@ -240,22 +256,22 @@ html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nt
 		transition: 1.5s ease-in-out;
 	}
 }
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(1):hover) body > section:nth-child(1) > div > div {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(1):hover) body main > section:nth-child(1) > div > div {
 	left: -2.2em;
 	top: -2.2em;
 }
 
 /* Boven */
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(2):hover) body > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(2):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(46deg);
 	transition: 1.5s ease-in-out;
 }
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(2):hover) body > section:nth-child(1) > div > div {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(2):hover) body main > section:nth-child(1) > div > div {
 	top: -2.2em;
 }
 
 /* Rechts boven */
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(3):hover) body > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(3):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(46deg);
 	transition: 1.5s ease-in-out;
 
@@ -264,31 +280,31 @@ html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nt
 		transition: 1.5s ease-in-out;
 	}
 }
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(3):hover) body > section:nth-child(1) > div > div {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(3):hover) body main > section:nth-child(1) > div > div {
 	left: 2.2em;
 	top: -2.2em;
 }
 
 /* Links */
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(4):hover) body > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(4):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(321deg);
 	transition: 1.5s ease-in-out;
 }
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(4):hover) body > section:nth-child(1) > div > div {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(4):hover) body main > section:nth-child(1) > div > div {
 	left: -2.2em;
 }
 
 /* Rechts */
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(6):hover) body > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(6):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(221deg);
 	transition: 1.5s ease-in-out;
 }
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(6):hover) body > section:nth-child(1) > div > div {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(6):hover) body main > section:nth-child(1) > div > div {
 	left: 2.2em;
 }
 
 /* Links beneden */
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(7):hover) body > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(7):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(0deg);
 	transition: 1.5s ease-in-out;
 
@@ -297,22 +313,22 @@ html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nt
 		transition: 1.5s ease-in-out;
 	}
 }
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(7):hover) body > section:nth-child(1) > div > div {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(7):hover) body main > section:nth-child(1) > div > div {
 	left: -2.2em;
 	top: 2.2em;
 }
 
 /* Beneden */
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(8):hover) body > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(8):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(0deg);
 	transition: 1.5s ease-in-out;
 }
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(8):hover) body > section:nth-child(1) > div > div {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(8):hover) body main > section:nth-child(1) > div > div {
 	top: 2.2em;
 }
 
 /* Rechts beneden */
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(9):hover) body > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(9):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(0deg);
 	transition: 1.5s ease-in-out;
 
@@ -321,14 +337,14 @@ html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nt
 		transition: 1.5s ease-in-out;
 	}
 }
-html:has(section:nth-child(1) > div:active):has(section:nth-child(1) > button:nth-child(9):hover) body > section:nth-child(1) > div > div {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(9):hover) body main > section:nth-child(1) > div > div {
 	left: 2.2em;
 	top: 2.2em;
 }
 
 /* -- Road -- */
-body > section:nth-child(3) {
-	width: 80%;
+body main > section:nth-child(3) {
+	width: 100%;
     overflow: scroll;
     position: absolute;
     top: 50%;

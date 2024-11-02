@@ -15,17 +15,35 @@
 
 body {
 	margin: 0;
-	background-color: var(--bgYellow);
-	height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+	background-color: darkgoldenrod;
+}
+
+header {
+	position: absolute;
+	top: 2em;
 }
 
 main {
 	display: flex;
-	flex-direction: row;
-	width: auto;
-	margin: 0;
-	align-items: center;
-	justify-content: center;
+    flex-direction: row;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+    max-width: 1400px;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+	top: 22em;
 }
 
 h1 {
@@ -33,6 +51,7 @@ h1 {
     text-transform: uppercase;
     font-size: 9em;
     text-align: center;
+	margin: 0;
 }
 
 body main > section:nth-child(3) > section:nth-child(1) {
@@ -205,9 +224,10 @@ body main > section:nth-child(3) > section:nth-child(1) {
 
 body main > section:nth-child(1) {
 	display: grid;
-	grid-template-columns: auto auto auto;
-	position: absolute;
-    left: 65%;
+    grid-template-columns: auto auto auto;
+    position: absolute;
+    left: 2em;
+    bottom: 50%;
 
 	& button {
 		width: 3em;
@@ -247,6 +267,12 @@ body main > section:nth-child(1) {
 		cursor: -moz-grabbing;
 		cursor: -webkit-grabbing;
 	}
+}
+
+body main > section:nth-child(2) {
+	position: absolute;
+	right: 2em;
+	bottom: 50%;
 }
 
 /* Links boven */
@@ -347,14 +373,17 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 
 /* -- Road -- */
 body main > section:nth-child(3) {
-	width: 100%;
+	width: 68%;
     overflow: scroll;
     position: absolute;
-    top: 50%;
-    height: 30em;
+    bottom: 4%;
+    height: 28em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--bgYellow);
+    border: 40px solid;
+    border-radius: 5em;
 
     & > section:nth-child(1) {
         /* width: 20em;
@@ -452,3 +481,13 @@ body main > section:nth-child(3) {
     }
 }
 
+
+footer {
+	position: absolute;
+    width: 85%;
+    height: 46em;
+    background-color: purple;
+    z-index: -1;
+    top: 15em;
+    border-radius: 300px / 150px;
+}

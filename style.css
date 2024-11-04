@@ -44,7 +44,7 @@
 @layer layout {
 	header {
 		position: absolute;
-		top: 53em;
+		top: 48em;
 	}
 
 	main {
@@ -58,7 +58,7 @@
 		overflow: hidden;
 		width: 85%;
 		position: absolute;
-		top: 20em;
+		top: 15em;
 	}
 
 	footer {
@@ -67,8 +67,11 @@
 		height: 46em;
 		background-color: #364495;
 		z-index: -1;
-		top: 15em;
+		top: 10em;
 		border-radius: 300px / 150px;
+		-webkit-box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.75);
 	}
 }
 
@@ -82,62 +85,63 @@
 		top: 53%;
 		z-index: 9999;
 
-		/* Grijp arm */
-		/* Grijp bovenarm */
-		& > section:nth-child(1) {
-			border: var(--Border);
-			width: 300px;
-			height: 40px;
-			background-color: var(--Yellow);
-			position: absolute;
-			top: -37px;
-			right: 50%;
-			border-radius: 50px;
-			transform: rotate(23deg);
-			transform-origin: 288px 50%;
-			transition: 9999999s ease-in-out;
-
-			/* Grijp onderarm */
-			& > section:nth-child(1) {
-				border: var(--Border);
-				width: 200px;
-				height: 40px;
-				background-color: var(--Yellow);
-				position: absolute;
-				top: -6px;
-				left: -170px;
-				border-radius: 50px;
-				transform: rotate(320deg);
-				transform-origin: 188px 50%;
-				transition: 9999999s ease-in-out;
-
-				/* Grijp schepje */
-				& > section:nth-child(1) {
-					border: var(--Border);
-					border-radius: 30px 20px 60px 30px;
-					width: 60px;
-					height: 60px;
-					background-color: var(--Grey);
-					position: absolute;
-					top: -5px;
-					left: -5px;
-					transform: rotate(110deg);
-					transform-origin: 16px 50%;
-					transition: 9999999s ease-in-out;
-				}
-			}
-		}
-
 		/* Hut */
-		& > section:nth-child(2) {
+		& > section:nth-child(1) {
 			border: var(--Border);
 			width: 200px;
 			height: 100px;
 			background-color: var(--Yellow);
 			border-radius: var(--Border-radius);
+			transition: 9999999s ease-in-out;
+
+			/* Grijp arm */
+			/* Grijp bovenarm */
+			& > section:nth-child(1) {
+				border: var(--Border);
+				width: 300px;
+				height: 40px;
+				background-color: var(--Yellow);
+				position: absolute;
+				top: -37px;
+				right: 50%;
+				border-radius: 50px;
+				transform: rotate(23deg);
+				transform-origin: 288px 50%;
+				transition: 9999999s ease-in-out;
+
+				/* Grijp onderarm */
+				& > section:nth-child(1) {
+					border: var(--Border);
+					width: 200px;
+					height: 40px;
+					background-color: var(--Yellow);
+					position: absolute;
+					top: -6px;
+					left: -170px;
+					border-radius: 50px;
+					transform: rotate(320deg);
+					transform-origin: 188px 50%;
+					transition: 9999999s ease-in-out;
+
+					/* Grijp schepje */
+					& > section:nth-child(1) {
+						border: var(--Border);
+						border-radius: 30px 20px 60px 30px;
+						width: 60px;
+						height: 60px;
+						background-color: var(--Grey);
+						position: absolute;
+						top: -5px;
+						left: -5px;
+						transform: rotate(110deg);
+						transform-origin: 16px 50%;
+						transition: 9999999s ease-in-out;
+					}
+				}
+			}
 
 			/* Raam */
-			& section:nth-child(1) {
+			& > section:nth-child(2) {
 				width: 50px;
 				height: 70px;
 				background-color: var(--Black);
@@ -146,7 +150,7 @@
 		}
 
 		/* Rupsband */
-		& > section:nth-child(3) {
+		& > section:nth-child(2) {
 			border: var(--Border);
 			width: 300px;
 			height: 40px;
@@ -219,6 +223,7 @@
 		position: absolute;
 		left: 2em;
 		bottom: 50%;
+		transition: 9999999s ease-in-out;
 
 		& button {
 			width: 3em;
@@ -249,7 +254,7 @@
 				left: calc(50% - 1em);
 
 				transition: all 0.2s ease 0s;
-				top: 0;
+				top: 0.2em;
 			}
 		}
 
@@ -260,10 +265,25 @@
 		}
 	}
 
+	/* Buttons */
 	body main > section:nth-child(2) {
 		position: absolute;
-		right: 2em;
+		right: 0em;
 		bottom: 50%;
+
+		& button {
+			border-radius: 50%;
+			width: 2em;
+			height: 2em;
+			background-color: red;
+			font-size: 2.3em;
+			margin-bottom: 0em;
+			border-width: 4px;
+			cursor: pointer;
+		}
+		& button:nth-child(2) {
+			background-color: green;
+		}
 	}
 }
 
@@ -294,52 +314,105 @@
 			overflow-x: scroll;
 			scroll-behavior: smooth;
 
-			& svg:nth-child(1) {
+			& svg:nth-of-type(1) {
 				position: absolute;
 				bottom: 1em;
-				left: 4vw;
+				left: -2vw;
 				z-index: 999999;
 			}
-			& svg:nth-child(2) {
+			& svg:nth-of-type(2) {
 				position: absolute;
 				bottom: 6em;
 				left: 60vw;
 				z-index: 1;
 			}
-			& svg:nth-child(3) {
+			& svg:nth-of-type(3) {
 				position: absolute;
 				bottom: 2.5em;
 				left: 70vw;
 				z-index: 999999;
 			}
-			& svg:nth-child(4) {
+			& svg:nth-of-type(4) {
 				position: absolute;
 				bottom: 2.5em;
 				left: 90vw;
 				z-index: 999999;
 			}
-			& svg:nth-child(5) {
+			& svg:nth-of-type(5) {
 				position: absolute;
 				bottom: 4.5em;
 				left: 120vw;
 			}
-			& svg:nth-child(6) {
+			& svg:nth-of-type(6) {
 				position: absolute;
 				bottom: 5.5em;
 				left: 134vw;
 			}
-			& svg:nth-child(7) {
+			& svg:nth-of-type(7) {
 				position: absolute;
 				bottom: 1.5em;
 				left: 150vw;
 				z-index: 999999;
 			}
+			& svg:nth-of-type(8) {
+				position: absolute;
+				width: 6em;
+				height: auto;
+				bottom: 1em;
+				left: 190vw;
+				z-index: 999999;
+			}
+
+			& section {
+				position: absolute;
+				left: 8vw;
+
+				& > img {
+					width: 6em;
+					position: absolute;
+				}
+
+				& > img:nth-of-type(1) {
+					left: 0em;
+				}
+				& > img:nth-of-type(2) {
+					left: 2em;
+				}
+				& > img:nth-of-type(3) {
+					left: 4em;
+				}
+				& > img:nth-of-type(4) {
+					left: 6em;
+				}
+			}
 		}
 	}
 }
 
+/* Rotate excavator */
+html:has(body main > section:nth-child(2) > button:nth-child(1):active) body main  {
+	& > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+		transform: rotateY(180deg);
+		transition: 1.5s ease-in-out;
+	}
+	& > section:nth-child(1) {
+		transform: rotateY(180deg);
+		transition: 0s ease-in-out;
+	}
+}
+html:has(body main > section:nth-child(2) > button:nth-child(2):active) body main  {
+	& > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+		transform: rotateY(0deg);
+		transition: 1.5s ease-in-out;
+	}
+	& > section:nth-child(1) {
+		transform: rotateY(0deg);
+		transition: 0s ease-in-out;
+	}
+}
+
 /* Links boven */
-html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(1):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(1):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(46deg);
 	transition: 1.5s ease-in-out;
 
@@ -354,7 +427,7 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 }
 
 /* Boven */
-html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(2):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(2):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(46deg);
 	transition: 1.5s ease-in-out;
 }
@@ -363,7 +436,7 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 }
 
 /* Rechts boven */
-html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(3):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(3):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(46deg);
 	transition: 1.5s ease-in-out;
 
@@ -373,12 +446,12 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 	}
 }
 html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(3):hover) body main > section:nth-child(1) > div > div {
-	left: 2.2em;
+	left: 2.8em;
 	top: -2.2em;
 }
 
 /* Links */
-html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(4):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(4):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(321deg);
 	transition: 1.5s ease-in-out;
 }
@@ -387,16 +460,16 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 }
 
 /* Rechts */
-html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(6):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(6):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(221deg);
 	transition: 1.5s ease-in-out;
 }
 html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(6):hover) body main > section:nth-child(1) > div > div {
-	left: 2.2em;
+	left: 2.8em;
 }
 
 /* Links beneden */
-html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(7):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(7):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(0deg);
 	transition: 1.5s ease-in-out;
 
@@ -407,20 +480,20 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 }
 html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(7):hover) body main > section:nth-child(1) > div > div {
 	left: -2.2em;
-	top: 2.2em;
+	top: 2.8em;
 }
 
 /* Beneden */
-html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(8):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(8):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(0deg);
 	transition: 1.5s ease-in-out;
 }
 html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(8):hover) body main > section:nth-child(1) > div > div {
-	top: 2.2em;
+	top: 2.8em;
 }
 
 /* Rechts beneden */
-html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(9):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) {
+html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(9):hover) body main > section:nth-child(3) > section:nth-child(1) > section:nth-child(1) > section:nth-child(1) {
 	transform: rotate(0deg);
 	transition: 1.5s ease-in-out;
 
@@ -430,8 +503,8 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 	}
 }
 html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) > button:nth-child(9):hover) body main > section:nth-child(1) > div > div {
-	left: 2.2em;
-	top: 2.2em;
+	left: 2.8em;
+	top: 2.8em;
 }
 
 @layer animations {

@@ -1,278 +1,341 @@
-:root {
-	--bgYellow: #cca600;
-	--Yellow: #e4bc0d;
-	--Grey: #a5a5a5;
-	--Black: #000;
+@layer variables {
+	:root {
+		--bgYellow: #cca600;
+		--Yellow: #e4bc0d;
+		--Grey: #a5a5a5;
+		--Black: #000;
 
-	--Border: 6px solid;
-	--Border-radius: 10px;
-}
-
-@font-face {
-	font-family: 'Rocher';
-	src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
-  }
-
-body {
-	margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 1700px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-	background-color: darkgoldenrod;
-}
-
-header {
-	position: absolute;
-	top: 2em;
-}
-
-main {
-	display: flex;
-    flex-direction: row;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    height: 550px;
-    max-width: 1400px;
-    overflow: hidden;
-    width: 100%;
-    position: absolute;
-	top: 22em;
-}
-
-h1 {
-	font-family: Rocher;
-    text-transform: uppercase;
-    font-size: 9em;
-    text-align: center;
-	margin: 0;
-}
-
-body main > section:nth-child(3) > section:nth-child(1) {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: fixed;
-    left: 0%;
-    top: 53%;
-	z-index: 9999;
-
-	/* Grijp arm */
-	/* Grijp bovenarm */
-	& > section:nth-child(1) {
-		border: var(--Border);
-		width: 300px;
-		height: 40px;
-		background-color: var(--Yellow);
-		position: absolute;
-		top: -37px;
-		right: 50%;
-		border-radius: 50px;
-		transform: rotate(23deg);
-		transform-origin: 288px 50%;
-		transition: 9999999s ease-in-out;
-
-		/* Grijp onderarm */
-		& > section:nth-child(1) {
-			border: var(--Border);
-			width: 200px;
-			height: 40px;
-			background-color: var(--Yellow);
-			position: absolute;
-			top: -6px;
-			left: -170px;
-			border-radius: 50px;
-			transform: rotate(320deg);
-			transform-origin: 188px 50%;
-			transition: 9999999s ease-in-out;
-
-			/* Grijp schepje */
-			& > section:nth-child(1) {
-				border: var(--Border);
-				border-radius: 30px 20px 60px 30px;
-				width: 60px;
-				height: 60px;
-				background-color: var(--Grey);
-				position: absolute;
-				top: -5px;
-				left: -5px;
-				transform: rotate(110deg);
-				transform-origin: 16px 50%;
-				transition: 9999999s ease-in-out;
-			}
-		}
-	}
-
-	/* Hut */
-	& > section:nth-child(2) {
-		border: var(--Border);
-		width: 200px;
-		height: 100px;
-		background-color: var(--Yellow);
-		border-radius: var(--Border-radius);
-
-		/* Raam */
-		& section:nth-child(1) {
-			width: 50px;
-			height: 70px;
-			background-color: var(--Black);
-			border-radius: 0px 0px 10px 0px;
-		}
-	}
-
-	/* Rupsband */
-	& > section:nth-child(3) {
-		border: var(--Border);
-		width: 300px;
-		height: 40px;
-		border-radius: 50px;
-		background-color: var(--Grey);
-		position: relative;
-		/* border-style: dashed; */
-		/* background: repeating-linear-gradient(90deg, var(--Grey), var(--Grey) 20px, var(--Black) 20px, var(--Black) 25px);
-        animation: gradient 15s infinite;
-        background-size: 400%; */
-        background-size: 400%;
-
-        /* animation-name: inner-scroll-gradient-animation;
-        animation-timeline: inner-scroll-gradient;
-        animation-timeline: view(inline);
-        animation-iteration-count: 4;
-        animation-fill-mode: none;
-        animation-range: 0% 100%; */
-        
-
-		& > section:nth-child(1) {
-			width: 273px;
-            height: 8px;
-			border-radius: 50px;
-			position: absolute;
-			top: -1px;
-            left: 13px;
-			background: repeating-linear-gradient(90deg, var(--Grey), var(--Grey) 20px, var(--Black) 20px, var(--Black) 25px);
-			background-size: 400%;
-			animation: outer-scroll-gradient linear both reverse;
-			animation-timeline: scroll(nearest inline);
-		}
-		& > section:nth-child(2) {
-			width: 273px;
-            height: 8px;
-            border-radius: 50px;
-            position: absolute;
-            top: 32px;
-            left: 13px;
-            background: repeating-linear-gradient(90deg, var(--Grey), var(--Grey) 20px, var(--Black) 20px, var(--Black) 25px);
-            background-size: 400%;
-            animation: outer-scroll-gradient linear both;
-            animation-timeline: scroll(nearest inline);
-		}
-		& > section:nth-child(3) {
-			width: 30px;
-            height: 30px;
-            border: var(--Border);
-            border-radius: 50px;
-            border-style: dashed;
-            position: absolute;
-            top: -1px;
-            left: -2px;
-            /* background: repeating-conic-gradient(red 0%, yellow 15%, red 33%); */
-            animation: rotate linear both;
-            animation-timeline: view(inline);
-            animation-fill-mode: none;
-            animation-range: 0% 100%;
-		}
-
-		& > section:nth-child(4) {
-			width: 30px;
-            height: 30px;
-            border: var(--Border);
-            border-radius: 50px;
-            border-style: dashed;
-            position: absolute;
-            top: -1px;
-            right: -1px;
-            /* background: repeating-conic-gradient(var(--Grey) 0%, var(--Grey) 10%, var(--Black) 10%, var(--Black) 17%); */
-            animation: rotate linear both;
-            animation-timeline: view(inline);
-            animation-fill-mode: none;
-            animation-range: 0% 100%;
-		}
+		--Border: 6px solid;
+		--Border-radius: 10px;
 	}
 }
 
-/* Define scroll timeline for the "Road" section */
-@scroll-timeline road-scroll-timeline {
-    source: body > section:nth-child(4) > section;
-    orientation: inline; /* Horizontal scroll */
-  }
-  
-  /* Keyframes for outer element's gradient animation */
-  @keyframes outer-scroll-gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
-  }
-
-body main > section:nth-child(1) {
-	display: grid;
-    grid-template-columns: auto auto auto;
-    position: absolute;
-    left: 2em;
-    bottom: 50%;
-
-	& button {
-		width: 3em;
-		height: 3em;
-		background-color: #a5a5a51c;
-		z-index: 999;
-		border: 1px solid #90909063;
+@layer fonts {
+	@font-face {
+		font-family: "Rocher";
+		src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
 	}
+}
 
-	& > div {
-		width: 40px;
-		height: 40px;
-		position: relative;
+@layer base {
+	body {
+		margin: 0;
+		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		& > div {
-			width: 2em;
-			height: 2em;
-			background-color: var(--Black);
-			cursor: grab;
-			cursor: -moz-grab;
-			cursor: -webkit-grab;
-			position: absolute;
-			border-radius: 50%;
-			left: calc(50% - 1em);
-
-			transition: all 0.2s ease 0s; /* only transition top property */
-			top: 0; /* start transitioning from position '0' instead of 'auto' */
-		}
+		max-width: 1700px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		background-color: darkgoldenrod;
 	}
 
-	& > div > div:active {
-		cursor: grabbing;
-		cursor: -moz-grabbing;
-		cursor: -webkit-grabbing;
+	h1 {
+		font-family: Rocher;
+		text-transform: uppercase;
+		font-size: 6em;
+		text-align: center;
+		margin: 0;
 	}
 }
 
-body main > section:nth-child(2) {
-	position: absolute;
-	right: 2em;
-	bottom: 50%;
+@layer layout {
+	header {
+		position: absolute;
+		top: 53em;
+	}
+
+	main {
+		display: flex;
+		flex-direction: row;
+		margin: 0;
+		align-items: center;
+		justify-content: center;
+		height: 550px;
+		max-width: 1400px;
+		overflow: hidden;
+		width: 85%;
+		position: absolute;
+		top: 20em;
+	}
+
+	footer {
+		position: absolute;
+		width: 85%;
+		height: 46em;
+		background-color: #364495;
+		z-index: -1;
+		top: 15em;
+		border-radius: 300px / 150px;
+	}
+}
+
+@layer excavator {
+	body main > section:nth-child(3) > section:nth-child(1) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: fixed;
+		left: 0%;
+		top: 53%;
+		z-index: 9999;
+
+		/* Grijp arm */
+		/* Grijp bovenarm */
+		& > section:nth-child(1) {
+			border: var(--Border);
+			width: 300px;
+			height: 40px;
+			background-color: var(--Yellow);
+			position: absolute;
+			top: -37px;
+			right: 50%;
+			border-radius: 50px;
+			transform: rotate(23deg);
+			transform-origin: 288px 50%;
+			transition: 9999999s ease-in-out;
+
+			/* Grijp onderarm */
+			& > section:nth-child(1) {
+				border: var(--Border);
+				width: 200px;
+				height: 40px;
+				background-color: var(--Yellow);
+				position: absolute;
+				top: -6px;
+				left: -170px;
+				border-radius: 50px;
+				transform: rotate(320deg);
+				transform-origin: 188px 50%;
+				transition: 9999999s ease-in-out;
+
+				/* Grijp schepje */
+				& > section:nth-child(1) {
+					border: var(--Border);
+					border-radius: 30px 20px 60px 30px;
+					width: 60px;
+					height: 60px;
+					background-color: var(--Grey);
+					position: absolute;
+					top: -5px;
+					left: -5px;
+					transform: rotate(110deg);
+					transform-origin: 16px 50%;
+					transition: 9999999s ease-in-out;
+				}
+			}
+		}
+
+		/* Hut */
+		& > section:nth-child(2) {
+			border: var(--Border);
+			width: 200px;
+			height: 100px;
+			background-color: var(--Yellow);
+			border-radius: var(--Border-radius);
+
+			/* Raam */
+			& section:nth-child(1) {
+				width: 50px;
+				height: 70px;
+				background-color: var(--Black);
+				border-radius: 0px 0px 10px 0px;
+			}
+		}
+
+		/* Rupsband */
+		& > section:nth-child(3) {
+			border: var(--Border);
+			width: 300px;
+			height: 40px;
+			border-radius: 50px;
+			background-color: var(--Grey);
+			position: relative;
+			background-size: 400%;
+
+			& > section:nth-child(1) {
+				width: 273px;
+				height: 8px;
+				border-radius: 50px;
+				position: absolute;
+				top: -1px;
+				left: 13px;
+				background: repeating-linear-gradient(90deg, var(--Grey), var(--Grey) 20px, var(--Black) 20px, var(--Black) 25px);
+				background-size: 155vw;
+				animation: outer-scroll-gradient linear both reverse;
+				animation-timeline: scroll(nearest inline);
+			}
+			& > section:nth-child(2) {
+				width: 273px;
+				height: 8px;
+				border-radius: 50px;
+				position: absolute;
+				top: 32px;
+				left: 13px;
+				background: repeating-linear-gradient(90deg, var(--Grey), var(--Grey) 20px, var(--Black) 20px, var(--Black) 25px);
+				background-size: 155vw;
+				animation: outer-scroll-gradient linear both;
+				animation-timeline: scroll(nearest inline);
+			}
+			& > section:nth-child(3) {
+				width: 30px;
+				height: 30px;
+				border: var(--Border);
+				border-radius: 50px;
+				border-style: dashed;
+				position: absolute;
+				top: -1px;
+				left: -2px;
+				animation: rotate linear both;
+				animation-timeline: view(inline);
+				animation-fill-mode: none;
+				animation-range: 0% 100%;
+			}
+
+			& > section:nth-child(4) {
+				width: 30px;
+				height: 30px;
+				border: var(--Border);
+				border-radius: 50px;
+				border-style: dashed;
+				position: absolute;
+				top: -1px;
+				right: -1px;
+				animation: rotate linear both;
+				animation-timeline: view(inline);
+				animation-fill-mode: none;
+				animation-range: 0% 100%;
+			}
+		}
+	}
+}
+
+@layer controls {
+	body main > section:nth-child(1) {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		position: absolute;
+		left: 2em;
+		bottom: 50%;
+
+		& button {
+			width: 3em;
+			height: 3em;
+			background-color: #a5a5a51c;
+			z-index: 999;
+			border: 1px solid #90909063;
+		}
+
+		& > div {
+			width: 40px;
+			height: 40px;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			& > div {
+				width: 2em;
+				height: 2em;
+				background-color: var(--Black);
+				cursor: grab;
+				cursor: -moz-grab;
+				cursor: -webkit-grab;
+				position: absolute;
+				border-radius: 50%;
+				left: calc(50% - 1em);
+
+				transition: all 0.2s ease 0s;
+				top: 0;
+			}
+		}
+
+		& > div > div:active {
+			cursor: grabbing;
+			cursor: -moz-grabbing;
+			cursor: -webkit-grabbing;
+		}
+	}
+
+	body main > section:nth-child(2) {
+		position: absolute;
+		right: 2em;
+		bottom: 50%;
+	}
+}
+
+@layer road {
+	/* -- Road -- */
+	body main > section:nth-child(3) {
+		width: 68%;
+		overflow: scroll;
+		position: absolute;
+		bottom: 4%;
+		height: 28em;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background-color: var(--bgYellow);
+		border: 40px solid;
+		border-radius: 5em;
+
+		& > section:nth-child(1) {
+			position: sticky;
+		}
+
+		& > section:nth-child(2) {
+			background-color: brown;
+			width: 200vw;
+			height: 10em;
+			display: flex;
+			overflow-x: scroll;
+			scroll-behavior: smooth;
+
+			& svg:nth-child(1) {
+				position: absolute;
+				bottom: 1em;
+				left: 4vw;
+				z-index: 999999;
+			}
+			& svg:nth-child(2) {
+				position: absolute;
+				bottom: 6em;
+				left: 60vw;
+				z-index: 1;
+			}
+			& svg:nth-child(3) {
+				position: absolute;
+				bottom: 2.5em;
+				left: 70vw;
+				z-index: 999999;
+			}
+			& svg:nth-child(4) {
+				position: absolute;
+				bottom: 2.5em;
+				left: 90vw;
+				z-index: 999999;
+			}
+			& svg:nth-child(5) {
+				position: absolute;
+				bottom: 4.5em;
+				left: 120vw;
+			}
+			& svg:nth-child(6) {
+				position: absolute;
+				bottom: 5.5em;
+				left: 134vw;
+			}
+			& svg:nth-child(7) {
+				position: absolute;
+				bottom: 1.5em;
+				left: 150vw;
+				z-index: 999999;
+			}
+		}
+	}
 }
 
 /* Links boven */
@@ -371,123 +434,126 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 	top: 2.2em;
 }
 
-/* -- Road -- */
-body main > section:nth-child(3) {
-	width: 68%;
-    overflow: scroll;
-    position: absolute;
-    bottom: 4%;
-    height: 28em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--bgYellow);
-    border: 40px solid;
-    border-radius: 5em;
+@layer animations {
+	/* Keyframes and animation definitions */
+	@keyframes outer-scroll-gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		100% {
+			background-position: 100% 50%;
+		}
+	}
 
-    & > section:nth-child(1) {
-        /* width: 20em;
-        height: 10em;
-        background-color: aqua;
-        animation: bg linear both;
-        top: 0;
-        left: 0;
-        flex: 0 0 auto;
-        animation-timeline: scroll(nearest inline); */
-        position: sticky;
-    }
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(4600deg);
+		}
+	}
+}
 
-	& > section:nth-child(2) {
-		background-color: brown;
-		width: 200vw;
-		height: 10em;
-		display: flex;
-		overflow-x: scroll; /* Horizontal scroll */
-		scroll-behavior: smooth;
+@layer responivenes {
+	@media only screen and (max-width: 1400px) {
+		body main > section:nth-child(3) {
+			width: 53%;
+		}
 
-		/* & > section {
-			left: 30%;
-			position: absolute;
-			width: 100px;
-			height: 100px;
-			background-color: red;
+		h1 {
+			font-size: 5em;
+		}
 
-			animation-name: rotate;
-			animation-timeline: view(inline);
-			animation-fill-mode: none;
-			animation-range: 0% 100%;
-		} */
+		body main > section:nth-child(3) > section:nth-child(1) {
+			scale: 0.8;
+		}
+	}
 
-		& svg:nth-child(1) {
-			position: absolute;
+	@media only screen and (max-width: 1000px) {
+		header {
+			top: 42em;
+		}
+		h1 {
+			font-size: 4em;
+		}
+		footer {
+			height: 56em;
+			background-color: var(--Yellow);
+			top: 4em;
+		}
+
+		main {
+			height: 52em;
+			top: 4em;
+		}
+
+		body main > section:nth-child(3) {
+			width: 70%;
+			bottom: auto;
+			top: 5em;
+		}
+
+		body main > section:nth-child(1) {
+			left: 8em;
+			bottom: 0%;
+		}
+		body main > section:nth-child(2) {
+			right: 13em;
+			bottom: 3em;
+		}
+		body main > section:nth-child(3) > section:nth-child(1) {
+			scale: 0.6;
+		}
+	}
+
+	@media only screen and (max-width: 700px) {
+		body main > section:nth-child(1) {
+			left: 4em;
+			bottom: 0%;
+		}
+		body main > section:nth-child(2) {
+			right: 7em;
+			bottom: 3em;
+		}
+	}
+
+	@media only screen and (max-width: 500px) {
+		header {
+			top: 30em;
+		}
+		h1 {
+			font-size: 3em;
+		}
+		footer {
+			height: 43em;
+		}
+		main {
+			height: 39em;
+		}
+		body main > section:nth-child(3) {
+			width: 80%;
+			bottom: auto;
+			top: 3em;
+			border: 20px solid;
+			height: 20em;
+
+			& > section:nth-child(2) {
+				& svg {
+					height: 10em;
+				}
+			}
+		}
+		body main > section:nth-child(3) > section:nth-child(1) {
+			scale: 0.5;
+		}
+		body main > section:nth-child(1) {
+			left: 2em;
 			bottom: 1em;
-			left: 4%;
-			z-index: 999999;
 		}
-		& svg:nth-child(2) {
-			position: absolute;
-            bottom: 6em;
-            left: 60%;
-            z-index: 1;
-		}
-		& svg:nth-child(3) {
-			position: absolute;
-            bottom: 2.5em;
-            left: 70%;
-			z-index: 999999;
-		}
-		& svg:nth-child(4) {
-			position: absolute;
-            bottom: 2.5em;
-            left: 90%;
-			z-index: 999999;
-		}
-		& svg:nth-child(5) {
-			position: absolute;
-            bottom: 4.5em;
-            left: 120%;
-		}
-		& svg:nth-child(6) {
-			position: absolute;
-            bottom: 5.5em;
-            left: 134%;
-		}
-		& svg:nth-child(7) {
-			position: absolute;
-            bottom: 1.5em;
-            left: 150%;
-			z-index: 999999;
+		body main > section:nth-child(2) {
+			right: 4em;
+			bottom: 4em;
 		}
 	}
-}
-
-@keyframes rotate {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(3600deg);
-	}
-}
-
-@keyframes bg {
-    0% {
-        background: hotpink;
-        border-color: hotpink;
-    }
-    100% {
-        background: lime;
-        border-color: lime;
-    }
-}
-
-
-footer {
-	position: absolute;
-    width: 85%;
-    height: 46em;
-    background-color: purple;
-    z-index: -1;
-    top: 15em;
-    border-radius: 300px / 150px;
 }

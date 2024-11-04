@@ -572,7 +572,7 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 			bottom: 0%;
 		}
 		body main > section:nth-child(2) {
-			right: 13em;
+			right: 9em;
 			bottom: 3em;
 		}
 		body main > section:nth-child(3) > section:nth-child(1) {
@@ -586,7 +586,7 @@ html:has(main section:nth-child(1) > div:active):has(main section:nth-child(1) >
 			bottom: 0%;
 		}
 		body main > section:nth-child(2) {
-			right: 7em;
+			right: 3em;
 			bottom: 3em;
 		}
 	}

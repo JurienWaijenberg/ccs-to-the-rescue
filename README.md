@@ -8,7 +8,7 @@ Voor het vak CSS to the rescue konden we kiezen uit vier opdrachten. Ik heb voor
 
 Het doel van de opdracht is te experimenteren met CSS, we mogen dus geen JavaScript gebruiken. Ook het gebruik van classes of id's is niet de bedoeling. 
 
-Bekijk mijn [wiki](https://github.com/JurienWaijenberg/css/wiki) voor het volledige proces.
+Bekijk mijn [wiki](https://github.com/JurienWaijenberg/ccs-to-the-rescue/wiki) voor het volledige proces.
 
 ## Installeren
 
